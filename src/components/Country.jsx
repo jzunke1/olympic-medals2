@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import Medal from './Medal'
 
-
-function Country({ id, name, gold, onDelete }) {
+function Country({ id, name, medals, onDelete }) {
     function handleDelete() {
         onDelete(id)
     }
@@ -17,7 +17,9 @@ function Country({ id, name, gold, onDelete }) {
             </div>
             <hr />
             <div className="country-medals">
-                <p>Gold Medals: {gold}</p>
+                {medals.map((medal) => (
+                    <Medal key={medal.id} name={medal.name} />
+                ))}
             </div>
         </div>
     )
