@@ -2,12 +2,6 @@ import { useState } from 'react'
 import './App.css'
 import Country from './components/Country'
 
-const medals = [
-  { id: 1, name: "gold" },
-  { id: 2, name: "silver" },
-  { id: 3, name: "bronze" },
-];
-
 function App() {
   const [countries, setCountries] = useState([
     { id: 1, name: 'United States', gold: 2 },
@@ -29,7 +23,6 @@ function App() {
           id={country.id}
           name={country.name}
           gold={country.gold}
-          medals={medals}
           onDelete={deleteCountry}
         />
       ))}
